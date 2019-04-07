@@ -39,11 +39,6 @@ def start(config):
             channel_entity_by_channel_name[d.name] = InputChannel(d.entity.id, d.entity.access_hash)
         if d.name in config["input_channel_names"]:
             input_channels_entities.append(channel_entity_by_channel_name.get(d.name))
-
-        # if d.name in config["input_channel_names"]:
-        #     input_channels_entities.append(InputChannel(d.entity.id, d.entity.access_hash))
-        # if d.name == config["output_channel_names"]:
-        #     output_channel_entity = InputChannel(d.entity.id, d.entity.access_hash)
             
     if len(channel_entity_by_channel_name) != len(output_channels_by_input_channel) * 2:
         logger.error("One or more channels were not found in the dialogs")

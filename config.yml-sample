@@ -5,6 +5,9 @@ session_name: 'forwardgram' # Session name.
 # The key is that the entry # x in the inputs corresponds to entry # x in the outputs.
 # i.e. the first entry in input_channel_names means messages from this channel will be forwarded to the first entry in output_channel_names
 
+# NOTE: One caveat is that if a channel does not exist when the script is being started, no errors will be thrown, but there will be updates to/from the channel.
+# If the channel is then created at a later time, the script must be restarted for the changes to take effect.
+
 # The channel names that you'd like to forward messages from.
 # The user running the client must have these channels present on it's dialogs.
 input_channel_names:
