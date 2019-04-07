@@ -1,13 +1,22 @@
-api_id: 123456 # This has to be an integer.
-api_hash: 'abcdefg' # Long 32 characters hash identifier.
+api_id: 12345 # This has to be an integer.
+api_hash: 'abcdef' # Long 32 characters hash identifier.
 session_name: 'forwardgram' # Session name.
+
+# The key is that the entry # x in the inputs corresponds to entry # x in the outputs.
+# i.e. the first entry in input_channel_names means messages from this channel will be forwarded to the first entry in output_channel_names
 
 # The channel names that you'd like to forward messages from.
 # The user running the client must have these channels present on it's dialogs.
 input_channel_names:
-  - 'Channel Name A'
-  - 'Channel Name B'
+  - 'Input Channel A'
+  - 'Input Channel B'
+  - 'Input Channel C'
+  - 'Input Channel D'
 
 # The output channel name that the messages will be forwarded to.
 # The user running the client must be that channel admin, and have the channel present on it's dialogs.
-output_channel_name: 'My Cool Channel Name'
+output_channel_names:
+  - 'Output Channel A'
+  - 'Output Channel B'
+  - 'Output Channel C'
+  - 'Output Channel D'
